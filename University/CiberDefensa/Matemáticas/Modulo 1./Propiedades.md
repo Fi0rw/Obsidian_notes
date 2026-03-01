@@ -35,4 +35,4 @@
 - **Propiedad Multiplicativa**: 
 	- El valor absoluto de un producto es el producto de los valores absolutos $|x \times y| = |x| \times |y|$ 
 - **Preservación de la división**: 
-	- El valor absoluto de un cociente es el cociente de los valores absolutos. 
+	- El valor absoluto de un cociente es el cociente de los valores absolutos. E.g: $|\frac{x}{y}| = \frac{|x}{y}|$ 

@@ -1,7 +1,3 @@
-# 🦈 Wireshark Blue Team Cheatsheet
-> **Guía rápida para análisis forense de red y respuesta a incidentes.**
-
----
 ## 1. Operadores Lógicos y Sintaxis
 Para combinar filtros y aislar el tráfico malicioso.
 
