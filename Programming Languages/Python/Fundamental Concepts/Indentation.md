@@ -1,5 +1,5 @@
 #### Indentation
-- En Python la indentación **define bloques**. Un `if`, `for`, `def`, `class` requieren indentación consistente. PEP8 recomienda **4 espacios** por nivel. E.g de indentación:  
+En Python la indentación **define bloques**. Un `if`, `for`, `def`, `class` requieren indentación consistente. PEP8 recomienda **4 espacios** por nivel. E.g de indentación:  
 
 ~~~Python
 if True:
@@ -7,4 +7,4 @@ if True:
 	print(x)
 ~~~
 
-- Error típico: `IndentationError` o `UnboundLocalError` si la indentación cambia el scope.
+Error típico: `IndentationError` o `UnboundLocalError` si la indentación cambia el scope.
