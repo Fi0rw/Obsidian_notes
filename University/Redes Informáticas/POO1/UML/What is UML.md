@@ -15,23 +15,23 @@ Un diagrama básico se vería así básicamente dice que `Manzana` se encuentra 
 
 La **Asociación** es la forma más básica de relacionar dos clases. 
 
-## Multiplicidad / Carnalidad
+## Multiplicidad 
 El diagrama básico nos dice que hay una relación, pero no de cuántos objetos participan en ella. Para ello se agrega la **multiplicidad**. 
 
 ~~~txt
-┌───────────┐  *     go in    1 ┌────────┐
-│  Naranja  │───────────────────│ Barril │
-└───────────┘                   └────────┘
+┌───────────┐  *   go in  1   ┌────────┐
+│  Naranja  │─────────────────│ Barril │
+└───────────┘                 └────────┘
 
-┌─────────┐   *     go in    1┌──────────┐
+┌─────────┐   *    go in  1   ┌──────────┐
 │ Manzana │───────────────────│  Canasta │
 └─────────┘                   └──────────┘
 ~~~
 
-Se lee como: 
+Se lee (de derecha/izquierda o izquierda/derecha) como: 
 - `1`: Exactamente 1 objeto.
 - `*`: Muchos objetos (cero o más).
-
+E.g: de izquierda a derecha en 1 (uno) `Barril` van * (muchas) `Naranja`
 ## What is UML for?
 UML es muy útil para: 
 - Comunicarse rápidamente en reuniones de equipo.

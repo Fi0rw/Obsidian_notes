@@ -1,0 +1,1 @@
+Los atributos son
