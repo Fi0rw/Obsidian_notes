@@ -1,6 +1,6 @@
 Las listas son colecciones ordenadas y mutables en Python, escritas con corchetes: `[1, "a", 3.14]`.
-- Indexables (a[0]), start en 0.
-- Mutables: append, pop, remove, a[i]=x.
+- Indexables (`a[0]`), start en 0.
+- Mutables: append, pop, remove, `a[i]=x`.
 - Heterogéneas: pueden mezclar tipos.
 - Útil para almacenar elementos en orden y modificarlos.
 
