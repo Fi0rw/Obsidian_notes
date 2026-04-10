@@ -457,18 +457,8 @@ Para realizar esta transmisión se utilizan principalmente dos tipos de señales
 ---
 
 17. Graficar la topología de una red WAN empresarial con cuatro sitios (cada uno con una o más redes LAN) interconectados a Internet en forma centralizada.
-            Internet
-                |
-           Router Central
-                |
-    ------------------------------
-    |            |             |
- Sitio A      Sitio B       Sitio C
-  (LAN)        (LAN)         (LAN)
-    |
- Sitio D
-  (LAN)
 
+![IMAGE](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F1.bp.blogspot.com%2F-q207KVr2KAs%2FVO-iSGD2YzI%2FAAAAAAAAAbY%2FQvl-Wc6dHKg%2Fs1600%2Fwan.jpg&f=1&nofb=1&ipt=0fc006587e6f850f062eeb52cf1f0936b9e1184eace257f05efc383921117d35)
 
 En esta topología:
 
@@ -480,14 +470,28 @@ En esta topología:
 
 18. Graficar el esquema básico de un sistema informático de procesamiento centralizado con un mainframe y terminales locales y remotos.
 
-  Terminal Remota  
-                  |  
-                  |
+![[Screenshot at 2026-04-10 10-05-29.png]]
 
-Terminal Local --- Mainframe --- Terminal Local  
-|  
-|  
-Terminal Remota
+**Mainframe**  
+→ Computadora central donde se realiza **todo el procesamiento**.
+
+**FEP (Front End Processor)**  
+→ Procesador frontal que **maneja las comunicaciones** con las terminales para no cargar al mainframe.  
+Se encarga de:
+
+- Control de líneas
+- Multiplexación
+- Gestión de terminales
+
+**T (Terminal)**  
+→ Dispositivos de usuario (terminales tontas).  
+Solo **envían/reciben datos**, no procesan.
+
+**M (Modem)**  
+→ Convierte señal digital ↔ analógica para transmitir por líneas telefónicas.
+
+**RTC (Red Telefónica Conmutada)**  
+→ La red telefónica pública por donde viajan las comunicaciones remotas.
 
 ---
 
