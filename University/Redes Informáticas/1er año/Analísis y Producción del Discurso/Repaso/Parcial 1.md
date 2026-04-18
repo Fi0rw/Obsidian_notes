@@ -91,3 +91,88 @@ El lenguaje humano se expresa a través de la oralidad y la escritura. Ambos per
 6. **Enunciado vs Oración**: El enunciado tiene contexto, es irrepetible y real. En cambio, la oración es una entidad gramatical aislada del contexto y del sujeto.
 
 7. **Discurso vs Texto**: El discurso es contextualizado, incluye ideología, cultura, situación. En cambio, el texto es un conjunto de enunciados, tiene una unidad comunicativa intencional y completa que se encuentra aislada del contexto. 
+
+## Esquema de Comunicación
+Los 6 elementos
+
+EMISOR (destinador) · RECEPTOR (destinatario) · MENSAJE · CÓDIGO (sistema de signos) · CANAL/CONTACTO (medio/soporte) · REFERENTE/CONTEXTO (tema).
+
+Retroalimentación
+
+Fenómeno de ida y vuelta cuando el destinatario acciona una respuesta. También llamado diálogo.
+
+F. Emotiva / Expresiva
+
+Centrada en el EMISOR. Manifiesta sentimientos y emociones. Marcas: 1ra persona · oraciones exclamativas · subjetividad. Ej: ¡Te extrañé! ¡Cuánto te quiero!
+
+F. Apelativa / Conativa
+
+Centrada en el RECEPTOR. Busca influir, convencer o que el receptor actúe. Marcas: oraciones exhortativas · vocativos · 2da persona. Ej: publicidad, discurso político, alegato.
+
+F. Referencial / Informativa
+
+Centrada en el REFERENTE. Informa, designa objetos/hechos/personas. Marcas: 3ra persona · verbos en indicativo · objetividad · matiz impersonal. Ej: libros de texto, noticias.
+
+F. Fática / De contacto
+
+Centrada en el CANAL. Establece o prolonga la comunicación. Escaso contenido informativo. Ej: saludos, "¿me escuchás?", "claro", "por supuesto."
+
+F. Poética / Estética
+
+Centrada en el MENSAJE. Embellece el mensaje para provocar placer estético. Mensajes altamente simbólicos, abiertos a múltiples interpretaciones. Predomina en la literatura.
+
+F. Metalingüística
+
+Centrada en el CÓDIGO. Usa el lenguaje para hablar del propio lenguaje. Ej: gramáticas, diccionarios, manuales escolares.
+
+Nota importante
+
+En cada práctica comunicativa pueden coexistir varias funciones, pero solo UNA o DOS tienen preponderancia sobre las demás.
+
+
+
+## Reformulación Del Esquema De La Comunicación 
+1. **_Kerbrat Orechioni_**: Reformuló el modelo de Jakobson debido a que era demasiado simple y no reflejaba la complejidad de la comunicación humana. Jakobson la ve como proceso neutral y unidireccional. Kerbrat demuestra que no lo es. 
+
+2. **Aporte 1, Código Heterogéneo**: Para Jakobson el código era único, homogéneo, externo al individuo. Kerbrat por otro lado, concluyó que el código es HETEROGÉNEO e INTERNO al individuo. Está formado por al menos dos idiolectos. 
+
+3. **Variedades lingüísticas**: Dentro de las variedades lingüísticas se encuentra el: 
+	- **DIALECTO**: variedad geográfica. 
+	- **SOCIOLECTO**: variedad por formación cultural/educativa. 
+	- **CRONOLECTO**: variedad por edad. 
+	- **IDIOLECTO**: manera particular de hablar de cada individuo.
+
+4. **Aporte 2, Restricciones del Universo del Discurso**: Las restricciones del universo del discurso son las limitaciones léxicas y sintácticas del emisor. 
+
+5. **Aporte 3, Competencias Lingüisticas y Paralingüisticas**: Las competencias lingüísticas son las capacidades que posee el hablante en el manejo del vocabulario. Las competencias paralingüísticas son signos NO verbales que complementan las lingüísticas (entonación, timbre, actitud). 
+
+6. **Aporte 4a, Competencias Culturales e Ideológicas**: Las competencias culturales e ideológicas son todo acto comunicacional en el que intervienen las experiencias, la educación y el sistema de creencias de cada participante. Al tener distintas creencias, emisor y receptor producen/interpretan desde lugares diferentes. 
+
+7. **Aporte 4b, Determinaciones PSI**: Las determinaciones PSI son los factores psicologicos y analiticos que afectan a los interlocutores a la hora de comunicarse. Factores afectivos, emocionales y anímicos durante la comunicación. El estado de ánimo cambia la manera de producir o interpretar un mensaje. 
+
+8. **Aporte 5, Modelos de Producción e Interpretación**: Los modelos de producción e interpretación se refieren al proceso de codificación y decodificación del mensaje. Son propios de cada sujeto y demuestran que la comunicación falla cuando los "filtros" del emisor y del receptor no coinciden. 
+
+9. **Alocutario**: Hay diferentes tipos de alocutarios: 
+	- **Alocutario Previsto**: previsto y mencionado en el texto.
+	- **No Alocutario Previsto**: no mencionado pero supuesto como posible. 
+	- **Alocutario No Previsto**: no mencionado ni considerado. 
+
+
+## Géneros Discursivos
+1. **Géneros Discursivos**: **_Mijail Bajtin_** definió los géneros discursivos como **CONJUNTOS DE ENUNCIADOS RELATIVAMENTE ESTABLES producidos en las distintas esferas de la actividad humana**. 
+	- Son definidos por: TEMA (contenido) + ESTILO + REGLAS DE COMPOSICIÓN (estructura)
+
+2. **Características**: INAGOTABLES (tan variados como la actividad humana), HETEROGÉNEOS, ESTANDARIZADOS, HISTÓRICOS (existen, se transforman y dejan de existir). La voluntad individual NO los puede modificar. 
+
+3. **Función Del Conocimiento De Géneros**: Conocer los géneros discursivos permite para el lector anticipar estructura, tema, registro y léxico. Para el hablante permite producir discursos adecuadas a la esfera. 
+
+4. **Géneros Primarios**: Los géneros primarios surgen de conversaciones inmediatas y cotidianas. Son más simples, se aprenden de manera espontánea desde la infancia. 
+	- E.g: conversación, carta familiar, mensaje de texto, correo personal, etc. 
+
+5. **Géneros Secundarios**: Los géneros secundarios surgen en condiciones comunicativas más complejas. Suelen ser ESCRITOS y requieren enseñanza sistemática.
+	- E.g: Monografías, obras literarias, tratados científicos, etc.
+
+6. **Absorción de primario en secundario**: Cuando un enunciado del género primario (más simple) es reelaborado para formar parte del secundario, PIERDE CONTACTO CON LA REALIDAD INMEDIATA. 
+	- E.g: Un diálogo cotidiano dentro de una novela. 
+
+7. **Ámbitos de géneros secundarios**: Académicos, periodísticos, judicial, religioso, administrativo, publicitario, literario.  
