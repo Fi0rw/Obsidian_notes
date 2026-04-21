@@ -23,17 +23,15 @@ Todo elemento capaz de aumentar el poder ofensivo o defensivo de un individuo.
 - **ARMA DE FUEGO**: Utiliza la energía de los gases producidos por la **deflagración de la pólvora** para impulsar proyectiles. (Define deflagrar como arder súbitamente con llama y sin ruido, o quemar de forma progresiva).  
 - **ARMAS NEUMÁTICAS**: Utilizan un mecanismo a base de **aire comprimido o gas ($CO_{2}$)** para impulsar el proyectil.  
 - **ARMAS DE LANZAMIENTO**: Dispara proyectiles autopropulsados (granadas, lanzallamas, munición química, con un alcance mayor a 3 metros, etc.)
-- **ARMA NEGRA**: Se refiere a las armas que no brillan o que están **diseñadas para la discreción y el ocultamiento** o se utiliza en entrenamientos. 
-- **ARMA ARROJADIZA**: Aquellas que requieren de la fuerza física del sujeto para ser lanzadas hacia el objetivo, sin un mecanismo de propulsión interno completo (una piedra, un dardo manual o lanza).
-- **ARMA DE PROYECCIÓN (O PROYECTILES)**: Instrumentos que lanzan un objeto al espacio mediante un mecanismo de impulsion. (arco y flecha, ballesta, etc).  
+
 
 **Clasificación por su funcionamiento**: 
 - **Carga tiro a tiro**: Sin cargador, debe recargarse tras cada disparo. 
 	- E.g: Pistola mono-disparo. 
 - **Repetición**: Tiene cargador pero la carga/descarga es manual.  
-	- E.g: Escopeta de un caño. 
+	- E.g: Escopeta de un caño, revolver. 
 - **Semi-automática**: Cada disparo requiere apretar el gatillo; ciclo automático. 
-	- E.g: Pistola, revólver. 
+	- E.g: Pistola.
 - **Automática**:  Con gatillo sostenido dispara continuamente hasta soltar o agotar munición.
 	- E.g: Ametralladora. 
 
@@ -98,14 +96,14 @@ Tanto la pistola como el revólver son **armas de puño o cortas** y **semi-auto
 2. **Estuche Cargador**: El contenedor que aloja los cartuchos. Permite la alimentación automática del arma.
 3. **Arco Guardamonte**: El aro de metal que rodea y protege el disparador. 
 4. **Disparador**: La pieza que acciona con el dedo para iniciar la secuencia del disparo.
-5. **Armazón:** Es la estructura principal del arma.
-6. **Resorte Recuperador**: El muelle que permite que la corredera vuelva a su posición inicial tras el disparo.  
-7. **Cañón**: El tubo a través del cual se desplaza el proyectil. 
-8. **Cartucho**: La unidad de munición del arma de fuego.  Contiene el proyectil, la vaina, la pólvora y el fulminante. 
-9. **Corredera**: La pieza móvil superior que se desplaza durante el ciclo de disparo. 
-10. **Martillo**: La pieza que golpea el percutor.
-11. **Alza**: Mira trasera. Junto al guión permite la alineación visual del blanco. 
-12. **Guión**: Mira delantera. Se alinea con el alza para apuntar. 
+5. **Resorte Recuperador**: El muelle que permite que la corredera vuelva a su posición inicial tras el disparo.  
+6. **Cañón**: El tubo a través del cual se desplaza el proyectil. 
+7. **Cartucho**: La unidad de munición del arma de fuego.  Contiene el proyectil, la vaina, la pólvora y el fulminante. 
+8. **Corredera**: La pieza móvil superior que se desplaza durante el ciclo de disparo. 
+9. **Martillo**: La pieza que golpea el percutor.
+10. **Alza**: Mira trasera. Junto al guión permite la alineación visual del blanco. 
+11. **Guión**: Mira delantera. Se alinea con el alza para apuntar. 
+12. **Armazón:** Es la estructura principal del arma.
 
 **Partes de Revolver**: 
 ![partes-revolver.png](partes-revolver.png)

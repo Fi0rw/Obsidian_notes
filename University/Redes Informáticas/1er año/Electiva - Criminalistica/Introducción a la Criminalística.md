@@ -1,5 +1,5 @@
 ## ¿Qué es la Criminalística? 
-> La Criminalística es una ciencia auxiliar del Derecho que, mediante la aplicación del método científico, estudia los indicios y evidencias hallados en el lugar del hecho con el objetivo de determinar si existió un delito, identificar a sus autores y reconstruir la forma en que ocurrió, aportando pruebas materiales al proceso judicial.
+> La Criminalística es una ciencia auxiliar del Derecho que, mediante la aplicación del método científico, estudia los indicios y evidencias hallados en el lugar del hecho con el objetivo de determinar si existió un delito, sus autores y reconstruir la forma en que ocurrió, aportando pruebas materiales al proceso judicial.
 
 Cuatro Pilares: 
 1. **Ciencia auxiliar del Derecho** ¿Qué es?
