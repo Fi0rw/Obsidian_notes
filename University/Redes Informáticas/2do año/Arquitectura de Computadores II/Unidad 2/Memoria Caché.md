@@ -54,13 +54,13 @@ Físicamente, el procesador está conectado a la caché por líneas de datos, di
 ## Elementos de diseño de la Caché
 La memoria caché posee un diseño específico:
 
-##### Tamaño de la caché
+##### 1. Tamaño de la caché
 El tamaño es una decisión de compromiso:
 - Si es **muy pequeña**: muchas fallas, se pierde el beneficio.
 - Si es **muy grande**: sube el costo (la caché usa tecnología cara) y no hay espacio físico en el chip.
 El objetivo es que el tamaño sea lo mínimo necesario para que el **tiempo de acceso promedio total** se parezca al tiempo de acceso de la caché sola.
 
-##### Función de correspondencia
+##### 2. Función de correspondencia
 Dado que hay muchos más bloques de memoria que líneas de caché, ¿cómo se decide **en qué línea de caché** va a cargarse cada bloque de memoria? Existen tres técnicas: 
 1. **Correspondencia Directa**: Cada bloque de memoria tiene una **única línea posible** en la cache donde puede guardarse
 	- La fórmula es $i = j \text{ módulo } m$ 
@@ -108,3 +108,146 @@ Dado que hay muchos más bloques de memoria que líneas de caché, ¿cómo se de
 | v = m, k = 1 | Un conjunto por línea | 1 línea/conjunto | Correspondencia directa pura    |
 | v = 1, k = m | Un único conjunto     | Todas las líneas | Correspondencia asociativa pura |
 
+##### 3. Algoritmos de sustitución
+Cuando la caché está llena y hay una falla, hay que **elegir qué línea existente reemplazar** para cargar el nuevo bloque. En correspondencia directa no hay elección (hay solo una opción). En los esquemas asociativos hay que decidir. Los algoritmos se implementan en hardware para ser rápidos:
+
+**LRU — Menos Recientemente Usado (Least Recently Used)** Cada línea lleva un registro de cuándo fue accedida por última vez. Se descarta la que hace más tiempo que no se usa. Es el más efectivo en la práctica porque se basa en la localidad temporal: lo que no se usó recientemente probablemente no se use pronto.
+
+**LFU — Menos Frecuentemente Usado (Least Frequently Used)** Cada línea lleva un contador de cuántas veces fue accedida. Se descarta la de menor frecuencia de uso. Puede ser problemático si un bloque fue muy usado al inicio pero ya no se necesita.
+
+**FIFO — Primero en entrar, primero en salir (First In First Out)** Se reemplazan las líneas en orden de llegada: la que entró primero es la primera en salir. Simple de implementar pero no necesariamente eficiente.
+
+**Aleatorio** Se elige una línea al azar para reemplazar. Sorprendentemente, en la práctica da resultados similares al LRU y es muy fácil de implementar en hardware.
+
+
+##### 4. Política de escritura
+¿qué pasa cuando la CPU **escribe** un dato? La caché tiene una copia del bloque y la memoria principal tiene otra. Hay que decidir cómo mantenerlas sincronizadas. La situación depende de si el dato que se quiere escribir **ya está en la caché o no**:
+
+| ¿Está en caché? | Política                           | Nombre técnico      | Descripción                                                                                                                                                                                                                                      |
+| --------------- | ---------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| SÍ              | Escritura Inmediata                | _Write through_     | Se escribe simultáneamente en caché y en memoria principal. Siempre están sincronizadas. Genera más tráfico en el bus.                                                                                                                           |
+| SÍ              | Postescritura (Escritura Diferida) | _Write back_        | Se escribe solo en la caché. La escritura en memoria principal se difiere hasta que esa línea sea reemplazada. Más eficiente pero puede haber inconsistencias temporales. Se usa el **bit de suciedad** para marcar que la línea fue modificada. |
+| NO              | Escritura Con Asignación           | _Write allocate_    | Se trae el bloque a la caché y se lo actualiza ahí.                                                                                                                                                                                              |
+| NO              | Escritura Sin Asignación           | _Write no allocate_ | Se escribe directamente en memoria principal sin traer el bloque a la caché.                                                                                                                                                                     |
+
+En sistemas con múltiples procesadores (cada uno con su propia caché) que comparten una memoria principal, surge el problema de **coherencia**: si el procesador A modifica un dato en su caché, el procesador B puede tener una copia obsoleta del mismo dato en su caché. Las soluciones son:
+
+**Vigilancia del bus con escritura inmediata**: cada controlador de caché monitorea el bus. Si detecta que alguien escribió en una posición que también tiene en su caché, invalida su propia copia.
+
+**Transparencia hardware**: hardware dedicado que garantiza que toda escritura en cualquier caché se propaga automáticamente a todas las demás cachés y a la memoria principal.
+
+**Memoria excluida de caché**: las zonas de memoria compartida entre procesadores se marcan como "no cacheable". Todo acceso a esas zonas va directo a memoria principal. Sencillo pero reduce la eficiencia.
+
+
+##### 5. Tamaño de línea
+¿Cuántas palabras debe tener cada línea/bloque? La relación entre tamaño de bloque y tasa de acierto tiene forma de campana. 
+- **Bloque pequeño**: cuando se carga un bloque, se trae poca información del vecindario. Muchas fallas.
+- **A medida que crece el bloque**: se aprovecha mejor la localidad espacial, hay más datos útiles en caché. La tasa de aciertos **sube**.
+- **Bloque muy grande**: empieza a bajar la tasa de aciertos. ¿Por qué?
+    - Hay **menos bloques en la caché** (el mismo espacio dividido en bloques más grandes da menos bloques). Más probabilidad de que el bloque que necesitas no esté.
+    - Las palabras al final del bloque están **lejos de la palabra original** y es menos probable que se necesiten pronto.
+    - Cada falla trae una transferencia más grande, lo que tarda más y satura el bus.
+
+##### 6. Número de cachés
+**Cachés multinivel:** Los procesadores modernos tienen varios niveles de caché:
+
+![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhardzone.es%2Fapp%2Fuploads-hardzone.es%2F2020%2F01%2FNiveles-de-cache.jpg&f=1&nofb=1&ipt=5d42fe54bce25be1ab4476b30b4ebc72235513acbd3911a358387229a42dcc69)
+
+- **L1**: la más pequeña y rápida, integrada directamente en el chip de la CPU. Se accede en pocos ciclos de reloj.
+- **L2**: más grande y algo más lenta, también suele estar en el mismo chip hoy en día.
+- **L3**: aún más grande, puede ser compartida entre varios núcleos.
+
+~~~txt
+La jerarquía es: CPU → L1 → L2 → L3 → Memoria Principal → Disco.
+~~~
+
+**Caché unificada vs. fragmentada:**
+- **Unificada**: una sola caché para instrucciones y datos. Simple pero puede generar cuellos de botella.
+- **Fragmentada (split cache)**: se divide en caché de instrucciones y caché de datos separadas. Esto es posible porque estadísticamente hay aproximadamente una escritura por cada cuatro o más lecturas, y las instrucciones solo se leen nunca se escriben. Al separarlas se pueden optimizar independientemente y se permite acceso simultáneo a instrucciones y datos.
+
+## Generalidades - Métricas de rendimiento 
+Fórmulas son las que permiten calcular el rendimiento real de la caché. 
+
+**Tasa de aciertos (Hit Rate — HR):**
+```
+HR = (Nº de aciertos / Nº total de accesos a memoria) × 100
+```
+
+Expresa qué porcentaje de las veces el dato estaba en caché.
+
+**Tasa de falla (Miss Rate — MR):**
+```
+MR = (Nº de fallas / Nº total de accesos a memoria) × 100
+```
+
+Nótese que HR + MR = 100%.
+
+**Tiempo efectivo (medio) de acceso (tea):**
+```
+tea = (Nº aciertos × tiempo de acierto + Nº fallas × tiempo de falla) / Nº total de accesos
+```
+
+También se puede expresar como:
+
+```
+tea = HR × t_caché + MR × t_memoria_principal
+```
+
+> **Nota**: si la caché tiene una tasa de aciertos del 90%, tiempo de acceso a caché de 10 ns y tiempo de acceso a memoria principal de 100 ns, entonces: tea = 0.90 × 10 + 0.10 × 100 = 9 + 10 = **19 ns** Sin caché sería 100 ns. Con caché es 19 ns. La mejora es enorme.
+
+
+## RESUMÉN ESQUEMÁTICO PARA REPASO
+~~~txt
+MEMORIA CACHÉ
+│
+├── Problema: CPU rápida, RAM lenta → necesito algo intermedio
+│
+├── Principio de localidad:
+│   ├── Temporal: lo que se usó recientemente se usará de nuevo
+│   └── Espacial: lo que está cerca de lo usado también se usará
+│
+├── Estructura:
+│   ├── Memoria Principal: 2ⁿ palabras, M = 2ⁿ/K bloques
+│   └── Caché: C líneas (C << M), cada línea = K palabras + etiqueta
+│
+├── Operación de lectura:
+│   ├── ACIERTO → entregar desde caché (rápido, sin usar el bus)
+│   └── FALLA → traer bloque de memoria principal → cargar en caché → entregar
+│
+├── Funciones de correspondencia:
+│   ├── Directa: i = j mod m  (1 bloque → 1 línea fija)
+│   │   ├── Ventaja: simple y barata
+│   │   └── Desventaja: thrashing si dos bloques compiten por la misma línea
+│   ├── Asociativa: bloque va a cualquier línea
+│   │   ├── Ventaja: máxima flexibilidad
+│   │   └── Desventaja: circuitería compleja y cara
+│   └── Asociativa por conjuntos: i = j mod v (dentro del conjunto → asociativa)
+│       ├── Caso extremo v=m, k=1 → directa pura
+│       ├── Caso extremo v=1, k=m → asociativa pura
+│       └── Caso práctico más común: k=2 (2 vías)
+│
+├── Algoritmos de sustitución (para asociativas):
+│   ├── LRU: descarta la menos recientemente usada ← más eficiente
+│   ├── LFU: descarta la menos frecuentemente usada
+│   ├── FIFO: descarta la que entró primero
+│   └── Aleatorio: descarta una al azar
+│
+├── Políticas de escritura:
+│   ├── Si dato EN caché:
+│   │   ├── Write through (escritura inmediata): escribe en caché Y en RAM
+│   │   └── Write back (postescritura): escribe solo en caché, difiere RAM
+│   └── Si dato NO EN caché:
+│       ├── Write allocate: trae bloque a caché, escribe ahí
+│       └── Write no allocate: escribe directo en RAM
+│
+├── Tamaño de línea: compromiso, bloques medianos maximizan tasa de aciertos
+│
+├── Número de cachés:
+│   ├── Multinivel: L1 (más rápida, en chip), L2, L3
+│   └── Unificada vs. Fragmentada (datos + instrucciones separados)
+│
+└── Métricas:
+    ├── HR = (aciertos / total) × 100
+    ├── MR = (fallas / total) × 100
+    └── tea = HR × t_caché + MR × t_memoria
+~~~
