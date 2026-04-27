@@ -22,9 +22,9 @@ Cuando la CPU quiere un dato, genera una dirección. Esa dirección hay que inte
 Para responder a ello, la dirección se divide en 3 partes y cada parte responde a una pregunta distinta: 
 
 ~~~txt
-┌─────────────┬──────────────────┬──────────┐
-│   ETIQUETA  │   LÍNEA/CONJUNTO │  PALABRA │
-└─────────────┴──────────────────┴──────────┘
+┌─────────────┬──────────────┬──────────┐
+│   ETIQUETA  │     LÍNEA    │  PALABRA │
+└─────────────┴──────────────┴──────────┘
 ~~~
 
 ##### Bits de PALABRA
@@ -60,3 +60,16 @@ $$\text{Bits de ETIQUETA = TOT. MEMORIA} - \text{BITS PALABRA}$$
 └──────────────────────────┴──────────┘
 ~~~
 
+## Mapeo ASOCIATIVO POR CONJUNTO - Etiqueta, Conjunto y Palabra
+Es la combinación de las dos anteriores y la más usada en la práctica. Resuelve los problemas de ambas. 
+
+Su estructura es la siguiente: la caché se divide en **v conjuntos**, donde cada conjunto tiene **k líneas**. La relación es: 
+
+$$TOT. LÍNEAS = CONJUNTOS \times \text{LÍNEAS POR CONJUNTO}$$
+La dirección se divide en: 
+
+~~~txt
+┌─────────────┬────────────┬────────────┐
+│   ETIQUETA  │   CONJUNTO │   PALABRA  │
+└─────────────┴────────────┴────────────┘
+~~~
