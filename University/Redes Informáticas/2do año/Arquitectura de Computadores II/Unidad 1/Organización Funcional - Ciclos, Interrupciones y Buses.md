@@ -60,6 +60,19 @@ Las tres instrucciones en memoria son:
 > 💡 **Resultado final**: la posición 941 pasó de tener 0002 a tener 0005 (3+2=5). Se usaron 3 ciclos de instrucción completos (3 captaciones + 3 ejecuciones).
 
 
+##### El ciclo de instrucción detallado (diagrama de estados)
+El ciclo básico de dos pasos es una simplificación. En realidad, cada instrucción puede pasar por hasta 7 estados:
+
+1. **IAC** — Cálculo de la dirección de la instrucción: determina de dónde captar la próxima instrucción (normalmente es PC + 1 o PC + 2 dependiendo del tamaño de la instrucción y si la memoria es de 16 bits o de bytes).
+2. **IF** — Captación de instrucción: la CPU lee la instrucción de memoria y la mete en el IR.
+3. **IOD** — Decodificación: analiza el IR para saber qué operación hacer y qué operandos usar.
+4. **OAC** — Cálculo de la dirección del operando: si la instrucción requiere leer/escribir un dato en memoria o E/S, calcula su dirección.
+5. **OF** — Captación del operando: lee el dato desde memoria o E/S.
+6. **DO** — Operación con los datos: ejecuta la operación (suma, comparación, etc.).
+7. **OS** — Almacenamiento del operando: escribe el resultado en memoria o E/S.
+
+No todos los estados ocurren en cada instrucción. Y algunos pueden repetirse (por ejemplo, si hay varios operandos).
+
 ---
 
 ## Interrupciones
