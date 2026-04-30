@@ -1,4 +1,4 @@
-El **algoritmo de ordenamiento por burbuja** itera repetidamente sobre la lista comparando pares adyacentes y permutándolos si están en el orden incorrecto, repitiendo pasadas hasta que no se realizan intercambios (lista ordenada). En Python se implementa con dos bucles anidados: **el externo controla el número de pasadas** $(n‑1)$ y **el interno recorre índices** 0..n-i-2 comparando y haciendo swaps con una asignación múltiple $(a[j], a[j+1] = a[j+1], a[j])$; añadiendo un flag booleano que detecta ausencia de intercambios se puede terminar antes. 
+El **algoritmo de ordenamiento por burbuja** itera repetidamente sobre la lista comparando pares adyacentes y permutándolos si están en el orden incorrecto, repitiendo pasadas hasta que no se realizan intercambios (lista ordenada). En Python se implementa con dos bucles anidados: **el externo controla el número de pasadas** $(n‑1)$ y **el interno recorre índices** 0..n-i-2 comparando y haciendo swaps con una asignación múltiple $(a[j], a[j+1] = a[j+1], a[j])$; añadiendo una variable/flag booleana que detecta ausencia de intercambios se puede terminar antes. 
 
 ~~~Python
 def main(): 
