@@ -59,4 +59,42 @@ Se puede concluir que efectivamente es un **filtro pasa altos**. A medida que la
 ## Filtro Pasa Bajos en el Simulador
 Un **filtro pasa bajos de segundo orden** con $L$ (inductor) en serie y $C$ (capacitor) en derivación.
 
-Se presenta un circuito con un condensador de $10uF$ y un inductor de $1mH$. Una **frecuencia** de $500Hz$, se observa una **baja amplitud** en el osciloscopio.
+Se presenta un circuito con un inductor de $1mH$ y un capacitor de $1uF$. Una **frecuencia** de $14KHz$, se observa una **muy baja amplitud** de la señal en el osciloscopio.
+
+![[simulador-1 2.png]]
+
+Se disminuye la frecuencia a $7,7KHz$ y se observa que la amplitud aumenta pero sin llegar a los $10V$
+
+![[simulador-2 1.png]]
+
+Al disminuir la frecuencia a $1KHz$ se observa que el receptor recibe la señal completa. La amplitud llega a los $10V$, la amplitud máxima.
+
+![[simulador-3 1.png]]
+
+Al disminuir aún más la frecuencia a $500Hz$ la amplitud de la señal no disminuye, se mantiene en $10V$. 
+
+![[simulador-4 1.png]]
+
+Se puede concluir que efectivamente es un **filtro pasa bajos**. A medida que la frecuencia disminuye, la señal en el receptor ($R_{x}$) aumenta. Sin embargo, al superar la **frecuencia de corte ($f_{c}$​)**, la reactancia del circuito aumenta la oposición al paso de la corriente, provocando que la amplitud de la señal se atenúe progresivamente a medida que la frecuencia sube. 
+
+---
+
+## Filtro Pasa Banda
+El circuito es un **RLC serie**: $L$ (Inductor) y $C$ (condensador) en serie y la resistencia ($R$) en derivación. El inductor de $1mH$, el condensador de $1uF$ y la resistencia de $1k\Omega$. 
+
+Si se calcula la **frecuencia de resonancia** $f_{0} = \frac{1}{2\pi \sqrt{ LC }}$ daría como resultado que la señal es de aproximadamente $5KHz$, donde la impedancia es mínima y hay máxima transferencia de potencia, notando que la amplitud es la máxima $10V$. 
+
+![[simulador-1 3.png]]
+
+Si se disminuye la frecuencia a $100Hz$ la amplitud baja notablemente a $5V$ aproximadamente
+
+![[simulador-2 2.png]]
+
+Se aumenta la frecuencia considerablemente más que la frecuencia de resonancia, específicamente a $1MHz$. Se observa que la amplitud de la señal disminuye demasiado.  
+
+![[simulador-3 2.png]]
+
+Se puede concluir que efectivamente es un **filtro pasa banda**. A medida que la frecuencia de la señal se aproxima a la **frecuencia de resonancia** ($f_0 \approx 5\text{ kHz}$), la reactancia inductiva y capacitiva se compensan, permitiendo la máxima transferencia de amplitud hacia la carga ($10V$). 
+
+Por el contrario, cuando la frecuencia se aleja de la frecuencia de resonancia, ya sea disminuyendo o aumentando la frecuencia, la impedancia del circuito del conjunto $LC$ aumenta drásticamente, provocando una caída notable en la tensión de salida. Esto demuestra que el filtro posee una **selectividad** definida, permitiendo el paso únicamente de un rango de frecuencias ($BW$) alrededor de su centro, y rechazando tanto las bajas como las altas frecuencias. 
+ 

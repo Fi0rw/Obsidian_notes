@@ -1,4 +1,4 @@
-## Conceptos Fundamentales Repaso
+## Conceptos Fundamentales
 ##### Reactancia
 La reactancia es **la "resistencia" que ofrecen los compontenes $C$ (Capacitor/Condensador) y $L$ (Inductor/Bobina) al paso de la corriente alterna ($CA$)**. Se diferencia de la resistencia común ($R$) en que **depende de la frecuencia**. 
 
