@@ -19,7 +19,7 @@ Es la **diferencia entre cada medición individual y el valor promedio**. El err
 - $x_{i}$ → es la medición individual
 - $x_{p}$ → es el promedio/valor real 
 
-$$E_{a} = x_{i} - x_{p}$$
+$$E_{a} = | x_{i} - x_{p} |$$
 
 ##### Error Relativo 
 El error relativo es **la división entre el error absoluto ($E_{a}$) y el valor promedio $(x_{p})$**. El error relativo no tiene unidades y sirve para comparar la "gravedad" de la impresición del error que hubo en la medición. 

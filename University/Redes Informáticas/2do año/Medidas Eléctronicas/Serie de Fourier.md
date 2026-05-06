@@ -138,3 +138,9 @@ Si se transmite una onda compleja que tiene componentes en muchas frecuencias a 
 
 Aplicación directa: la **radio AM y FM**. Cada estación de radio transmite en una frecuencia central diferente. Cuando sintonizás una estación, el receptor aplica un filtro pasa banda centrado en esa frecuencia. Solo pasan las señales de esa emisora, y las demás quedan bloqueadas. La "sintonía" es literalmente ajustar la frecuencia central del filtro pasa banda.
 
+---
+
+## Síntesis
+La Serie de Fourier es la herramienta matemática que demuestra que **cualquier señal periódica compleja** (como la voz o una onda cuadrada) es en realidad la **suma de infinitas ondas senoidales simples**. Al combinar una frecuencia fundamental con sus **armónicas** (múltiplos de esa frecuencia) y ajustar sus amplitudes, es posible armar cualquier forma de onda.
+
+En esencia, es el puente que permite dejar de ver la señal como voltaje que cambia en el **tiempo** para verla como un **espectro de frecuencias**, permitiéndote filtrar, transmitir y entender qué ingredientes componen una señal. 
